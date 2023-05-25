@@ -25,6 +25,18 @@ export class HeaderComponent implements OnInit {
         // routerLinkActiveOptions: { excat: true },
         icon: 'pi pi-fw pi-home'
       },
+      {
+        label: 'Card',
+        // routerLink: '/items',
+        // routerLinkActiveOptions: { excat: true },
+        icon: 'pi pi-fw pi-home'
+      },
+      {
+        label: 'Wish list',
+        // routerLink: '/items',
+        // routerLinkActiveOptions: { excat: true },
+        icon: 'pi pi-fw pi-home'
+      },
     ];
 
     this.activeItem = this.items[0];

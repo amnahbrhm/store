@@ -1892,6 +1892,7 @@ p-treeselect.p-treeselect-clearable .p-treeselect-clear-icon {
   font-size: 1rem;
   transition: background-color 0.2s, color 0.2s, border-color 0.2s, box-shadow 0.2s;
   border-radius: 6px;
+  width: 100%;
 }
 .p-button:enabled:hover {
   background: #2563eb;
@@ -6388,7 +6389,6 @@ p-treeselect.p-treeselect-clearable .p-treeselect-clear-icon {
 .p-datatable .p-datatable-tbody > tr.p-datatable-dragpoint-bottom > td {
   box-shadow: inset 0 -2px 0 0 #3B82F6;
 }
-
 
 .p-button.p-button-wi {
   color: white;
