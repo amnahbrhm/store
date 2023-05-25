@@ -5,7 +5,8 @@ import { ItemViewComponent } from './item-view/item-view.component';
 import { ItemsRoutingModule } from './items-routing.module';
 
 
-
+import { PanelModule } from 'primeng/panel';
+import { ButtonModule } from 'primeng/button';
 @NgModule({
   declarations: [
     ItemListComponent,
@@ -13,7 +14,9 @@ import { ItemsRoutingModule } from './items-routing.module';
   ],
   imports: [
     CommonModule,
-    ItemsRoutingModule
+    ItemsRoutingModule,
+    ButtonModule,
+    PanelModule
   ],
   exports: [
   ]

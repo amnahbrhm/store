@@ -5,8 +5,13 @@ import { AppLayoutComponent } from './layout/app-layout/app-layout.component';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'items',
+    redirectTo: 'home',
     pathMatch: 'full'
+  },
+  {
+    path: 'home',
+    component: AppLayoutComponent,
+    loadChildren: () => import('src/app/features/home/home.module').then((m)=> m.HomeModule)
   },
   {
     path: 'items',

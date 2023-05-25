@@ -5,7 +5,9 @@ import { AppLayoutComponent } from './app-layout/app-layout.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { RouterModule } from '@angular/router';
-// import { MenubarModule } from 'primeng/menubar';
+import { TabMenuModule } from 'primeng/tabmenu';
+import { ButtonModule } from 'primeng/button';
+import { DividerModule } from 'primeng/divider';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,9 @@ import { RouterModule } from '@angular/router';
   imports: [
     CommonModule,
     RouterModule,
-    // MenubarModule
+    TabMenuModule,
+    ButtonModule,
+    DividerModule
   ]
 })
 export class LayoutModule { }

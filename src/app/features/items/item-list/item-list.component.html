@@ -1,1 +1,15 @@
-<p>item-list works!</p>
+<p class="center title">Product list</p>
+<ng-container *ngFor="let item of products">
+    <div class="col-2" style="display: inline-block">
+        <div class="parentContainer">
+            <img [src]="item.image" [alt]="item.name"  />
+            <div class="bottom-right">
+                <p-button [icon]="!item.fav ? 'pi pi-heart' : 'pi pi-heart-fill'" (onClick)="item.fav = !item.fav" styleClass="p-button-rounded p-button-wi p-button-outlined"></p-button>
+            </div>
+        </div>
+        <h4 class="mb-1">{{ item.name }}</h4>
+        <h6 class="mt-0 mb-3">{{ '$' + item.price }}</h6>
+        <div class="car-buttons mt-5">
+        </div>
+    </div>
+</ng-container>

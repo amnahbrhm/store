@@ -1,4 +1,37 @@
 /* You can add global styles to this file, and also import other style files */
-/* @import "primeng/resources/themes/lara-light-blue/theme.css";
-@import "primeng/resources/primeng.css"; */
+@import url('src/assets/fonts.css');
 
+*:not(.pi) {
+    font-family: Roboto, sans-serif;
+}
+
+.content {
+    padding: 8rem 10rem 6rem 10rem;
+    width: -webkit-fill-available;
+}
+
+.layout {
+    position: fixed;
+    background-color: white;
+    width: -webkit-fill-available;
+}
+
+.footer {
+    bottom: 0;
+}
+
+.header {
+    top: 0;
+    z-index: 100;
+}
+
+.title {
+    font-size: 30px;
+    font-weight: 500;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
