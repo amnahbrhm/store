@@ -1,26 +1,37 @@
 /* You can add global styles to this file, and also import other style files */
 @import url('src/assets/fonts.css');
 
-*:not(.pi) {
+*:not(.pi):not(.fa) {
     font-family: Roboto, sans-serif;
 }
 
 html {
     margin: 0;
+    /* background-repeat: no-repeat;
+    background-attachment: fixed; */
+    /* background-image: url('assets/images/bg.jpg'); */
 }
 
 body {
     margin: 0;
+    background-color: rgb(255,255,255,0.9);
+}
+
+p {
+    color: #EF4444;
+    /* text-shadow: 2px 2px gray */
 }
 
 .content {
     /* padding: 4rem 10rem 6rem 10rem; */
     position: absolute;
-    top: 8rem;
     right: 20rem;
     left: 20rem;
     width: -webkit-fill-available;
+    padding-bottom: 6rem;
+    padding-top: 9rem;
 }
+
 
 .auth {
     width: 100%;
@@ -40,11 +51,18 @@ body {
 
 .footer {
     bottom: 0;
+    background-color: black;
 }
 
 .header {
+    display: flex;
+    align-items: center;
     top: 0;
+    justify-content: space-between;
     z-index: 100;
+    width: 100%;
+    padding: 20px 70px ;
+    background-color: black;
 }
 
 .title {

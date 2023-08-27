@@ -1,11 +1,50 @@
 <div class="grid">
-    <div class="col-6">
-        <img src="assets/images/image.jpg" height="600px" />
+    <div class="col-7">
+        <img [src]="'http://localhost:3000/api/items/image/'+item?.img " [alt]="item.name" width="100%" />
     </div>
-    <div class="col-6">
-        <span>
-            ASOS DESIGN fringe crochet cami maxi dress in stone
-        </span>
-        <p-button label="Add to bag" styleClass="p-button-help"></p-button>
+    <div class="col-5">
+        <div class="flex flex-column justify-content-end" style="height: 100%;">
+            <div class="box">
+                <p class="text-base red-text">
+                    New offer
+                    <br>
+                    <span class="text-sm red-text">
+                        I'am new copoun
+                    </span>
+                </p>
+            </div>
+            <span class="pb-4 mt-3">
+                {{item.description}}
+                <br>
+                {{item.price}}
+            </span>
+            <p-button label="Add to bag" (onClick)="addToCard()" styleClass="p-button mb-3"></p-button>
+            <span class="box-2">
+                Free Delivery.
+                <br>
+                Free Returns
+                <br>
+                <span class="text-xs" style="text-decoration: underline;">
+                    View our Delivery & Returns Policy
+                </span>
+            </span>
+            <!-- <div>
+                <p class="text-base mb-1">
+                    + Product Details
+                </p>
+                <p class="text-base mb-1 mt-0">
+                    + Brand
+                </p>
+                <p class="text-base mb-1 mt-0">
+                    + Size & Fit
+                </p>
+                <p class="text-base mb-1 mt-0">
+                    + Look After Me
+                </p>
+                <p class="text-base mb-2 mt-0">
+                    + About Me
+                </p>
+            </div> -->
+        </div>
     </div>
 </div>

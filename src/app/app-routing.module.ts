@@ -5,7 +5,7 @@ import { AppLayoutComponent } from './layout/app-layout/app-layout.component';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'home',
+    redirectTo: 'items',
     pathMatch: 'full'
   },
   {
@@ -21,7 +21,13 @@ const routes: Routes = [
     path: 'items',
     component: AppLayoutComponent,
     loadChildren: () => import('src/app/features/items/items.module').then((m)=> m.ItemsModule)
+  },
+  {
+    path: 'card',
+    component: AppLayoutComponent,
+    loadChildren: () => import('src/app/features/card-wishlist/card-wishlist.module').then((m)=> m.CardWishlistModule)
   }
+  
 ];
 
 @NgModule({

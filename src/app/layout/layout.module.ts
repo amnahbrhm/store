@@ -8,7 +8,7 @@ import { RouterModule } from '@angular/router';
 import { TabMenuModule } from 'primeng/tabmenu';
 import { ButtonModule } from 'primeng/button';
 import { DividerModule } from 'primeng/divider';
-
+import { InputTextModule } from 'primeng/inputtext';
 @NgModule({
   declarations: [
     AppLayoutComponent,
@@ -20,7 +20,8 @@ import { DividerModule } from 'primeng/divider';
     RouterModule,
     TabMenuModule,
     ButtonModule,
-    DividerModule
+    DividerModule,
+    InputTextModule
   ]
 })
 export class LayoutModule { }

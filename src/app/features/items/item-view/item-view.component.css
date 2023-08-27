@@ -1,0 +1,31 @@
+span {
+    /* color: #fff; */
+}
+
+
+
+.box {
+    background-color: rgba(251, 228, 228, 0.792);
+    padding: 5px;
+    border-radius: 8px;
+    /* margin: 4px; */
+}
+.box-2 {
+    background-color: rgba(255, 182, 182, 0.722);
+    padding: 5px;
+    border-radius: 8px;
+    /* border: 0.7px solid #fff; */
+    /* margin: 4px; */
+}
+
+p {
+    color: black;
+}
+
+img {
+    border-radius: 12px;
+}
+
+.red-text {
+    color: rgb(235, 32, 73);
+}
