@@ -12,7 +12,7 @@
                 <h4 class="text-xl mb-0">{{ item.name }}</h4>
                 <h6 class="text-base mt-0 mb-3">{{ '$' + item.price }}</h6>
             </div>
-            <i class="pi pi-shopping-cart" style="font-size: 1.7rem;"></i>
+            <i class="pi pi-shopping-cart" (click)="addToCard(item)" style="font-size: 1.7rem;"></i>
         </div>
     </div>
 </ng-container>

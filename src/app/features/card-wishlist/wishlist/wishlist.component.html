@@ -2,18 +2,20 @@
     <p-table [value]="items">
         <ng-template pTemplate="header">
             <tr>
-                <th>Price</th>
+                <th></th>
                 <th>Name</th>
-                <th>Quantity</th>
-                <th>Total</th>
+                <th>Price</th>
             </tr>
         </ng-template>
-        <ng-template pTemplate="body" let-product>
+        <ng-template pTemplate="body" let-product let-index="rowIndex">
             <tr>
-                <td>{{ product.price }}</td>
+                <td>
+                    <i class="pi pi-trash pr-4" (click)="remove(product, index)" [style.color]="'red'"></i>
+                    <i class="pi pi-shopping-bag" [style.color]="'green'"></i>
+                </td>
                 <td>{{ product.name }}</td>
-                <td>{{ product.quantity }}</td>
-                <td>{{ product.quantity * product.price}}</td>
+                <td>{{ product.price }}</td>
+                <!-- <td>{{ product.quantity * product.price}}</td> -->
             </tr>
         </ng-template>
         <ng-template pTemplate="emptymessage" let-columns>

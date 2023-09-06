@@ -5,6 +5,7 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { InputTextModule } from 'primeng/inputtext';
 import { ButtonModule } from 'primeng/button';
+import { ReactiveFormsModule } from '@angular/forms';
 
 const routes: Routes = [
   {
@@ -31,6 +32,7 @@ const routes: Routes = [
     CommonModule,
     InputTextModule,
     ButtonModule,
+    ReactiveFormsModule,
     RouterModule.forChild(routes)
   ]
 })

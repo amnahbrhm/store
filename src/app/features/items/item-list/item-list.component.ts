@@ -13,18 +13,35 @@ export class ItemListComponent {
   products: any[] = []
   page: number = 1;
   pagination: number = 7
-  favList: any;
-
+  favList: { [key: string]: boolean } = {};
+  cardList: { [key: string]: string | number }[] = []
   constructor(private service: ItemsService, private wishlistService: WishlistService, private helperService: ItemsHelperService) { }
   ngOnInit() {
     this.service.getProduct({ pagination: this.pagination, page: this.page }).subscribe((data: any) => {
       this.products = (data['items'] as []);
-      // this.rowsCount = data['rowsCount'];
     });
     this.getWishlist()
+    this.getCardList()
+    console.log('hey');
+
+  }
+  getCardList() {
+    const token = localStorage.getItem('token')
+    if (token) {
+      this.service.getCardList().subscribe((data: any) => {
+        this.cardList = data['list']
+      });
+    }
   }
   addToWishlist(item: any) {
-    this.wishlistService.card = item
+    const favList = JSON.parse(localStorage.getItem('favList')!)
+    favList[item._id] = !favList[item._id]
+    localStorage.setItem('favList', JSON.stringify(favList))
+    this.favList = favList
+    this.helperService.favListToString = favList
+    const token = localStorage.getItem('token')
+    if (token)
+      this.service.changFavList(this.helperService.favListToString).subscribe(() => { })
   }
   getWishlist() {
     const token = localStorage.getItem('token')
@@ -32,15 +49,28 @@ export class ItemListComponent {
       this.service.getFavList().subscribe((data: any) => {
         const list = (data['list'] as string[]);
         this.helperService.favList = list
-        console.log(JSON.parse(localStorage.getItem('favList') || ''));
+        this.favList = this.helperService.favList
       });
     }
     else {
-      const list = ["64e52c497b861264bd887e2f", "64e52d217b861264bd887ea9"];
-      this.helperService.favList = list
-     if(localStorage.getItem('favList') ){
-      this.favList = JSON.parse(localStorage.getItem('favList')!)
+      if (localStorage.getItem('favList')) {
+        this.favList = JSON.parse(localStorage.getItem('favList')!)
+      }
+      else {
+        localStorage.setItem('favList', JSON.stringify({}))
+      }
     }
+  }
+
+  addToCard(item: any) {
+    console.log(item);
+    const index = this.cardList.findIndex((Item)=> Item['id'] === item._id)
+    if(index === -1){
+      this.cardList.push({ id: item._id, quantity: 1 })
     }
+    else {
+      this.cardList[index]['quantity'] = ++(this.cardList[index]['quantity'] as number)
+    }
+    this.service.changCardList(this.cardList).subscribe(() => { })
   }
 }

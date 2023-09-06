@@ -20,6 +20,6 @@ export class ItemViewComponent {
     });
   }
   addToCard() {
-    this.cardService.card = this.item
+    // this.cardService.card = this.item
   }
 }

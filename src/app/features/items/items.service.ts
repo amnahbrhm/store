@@ -17,4 +17,20 @@ export class ItemsService {
         return this.http.get(`wishlist`)
     }
 
+    changFavList(list: string[]){
+        return this.http.put(`wishlist`, {list})
+    }
+
+    getProducts(params?: any){
+        const query= createQueryString(params)
+        return this.http.get(`items/list${query}`)
+    }
+
+    getCardList(){
+        return this.http.get(`card`)
+    }
+
+    changCardList(list: any[]){
+        return this.http.put(`card`, {list})
+    }
 }

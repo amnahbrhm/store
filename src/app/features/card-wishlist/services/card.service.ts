@@ -1,21 +1,16 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
+import { HttpService } from 'src/shared/services/http.service';
 
 @Injectable({ providedIn: 'root' })
 export class CardService {
-    constructor() { }
+    constructor(private http: HttpService) { }
 
-    private card$: BehaviorSubject<any[]> = new BehaviorSubject<any[]>([])
-
-
-    get card(): any[] {
-        return this.card$.value
+    getCardList(){
+        return this.http.get(`card`)
     }
 
-    set card(item: any) {
-        const index = this.card$.value.findIndex((innerItem) => innerItem.id === item.id)
-        index === -1
-            ? this.card$.next([...this.card$.value, { ...item, quantity: 1 }])
-            : this.card$.value[index].quantity = this.card$.value[index].quantity + 1
+    changCardList(list: any){
+        return this.http.put(`card`, {list})
     }
 }
