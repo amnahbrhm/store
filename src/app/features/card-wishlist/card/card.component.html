@@ -5,25 +5,26 @@
                 <th>Name</th>
                 <th>Quantity</th>
                 <th>Price</th>
-                <th>options</th>
+                <th>options
+                    <!-- {{copiedCardList[1].quantity}} -->
+
+                </th>
             </tr>
         </ng-template>
         <ng-template pTemplate="body" let-product let-index="rowIndex">
             <tr>
                 <td>{{ product.name }}</td>
-                <td class="flex">
-                    <!-- <button pButton pRipple label="+" class="p-button-success"></button>
-                    {{cardList[index].quantity}}
-                -->
-                
-                <button pButton pRipple label="update" (click)="update(index)" class="p-button-success"></button>
-                <p-dropdown appendTo="body" [options]="numbers" [(ngModel)]="copiedCardList[index].quantity" ></p-dropdown>
+                <td class="flex align-items-center gap-2" [style.height]="'100%'">
+                    <button pButton pRipple label="update" (click)="update(index)" class="p-button-danger"></button>
+                    <p-dropdown appendTo="body" [options]="numbers"
+                        [(ngModel)]="copiedCardList[index].quantity"></p-dropdown>
 
                 </td>
-                <td>{{ cardList[index].quantity * product.price }} 
-                   <div class="text-xs">
-                    {{cardList[index].quantity}} * {{product.price}}$
-                   </div> </td>
+                <td>{{ cardList[index].quantity * product.price }}
+                    <div class="text-xs">
+                        {{cardList[index].quantity}} * {{product.price}}$
+                    </div>
+                </td>
                 <td>
                     <!-- <i class="pi pi-heart-fill" [style.color]="'red'"></i> -->
                     <i class="pi pi-trash pl-2" [style.color]="'red'" (click)="remove(index)"></i>
@@ -31,9 +32,9 @@
             </tr>
         </ng-template>
         <ng-template pTemplate="footer">
-            <tr >
+            <tr>
                 <th [attr.colspan]="2" class="pt-4">Total</th>
-                <th [attr.colspan]="1" class="pt-4" >{{total}}</th>
+                <th [attr.colspan]="1" class="pt-4">{{total}}$</th>
             </tr>
         </ng-template>
         <ng-template pTemplate="emptymessage" let-columns>
@@ -51,4 +52,32 @@
     </p-table>
 </div>
 
-<p-button label="Checkout"></p-button>
+<p-button (click)="checkout()" [disabled]="(!cardList.length)" label="Checkout"></p-button>
+
+<p-dialog header="Thank you For your Order" [(visible)]="visible" [style]="{width: '80vw', hieght: '800vw'}">
+    <p>
+        Please check your inbox, as a confirmation email is on its way.
+    </p>
+    <p>
+        <span>
+            ORDER TOTAL :
+        </span>
+        {{total}}$
+        <br>
+        <span>
+            ORDER REFERENCE:
+        </span>
+        {{reference}}
+        <br>
+        <span>
+            DELIVERY:
+        </span>
+        Delivered on or before {{date | date}}
+        <br>
+        <span>
+            ORDER STATUS:
+        </span>
+        Received
+    </p>
+
+</p-dialog>

@@ -1,0 +1,51 @@
+:host ::ng-deep {
+    .p-dropdown .p-dropdown-label {
+        color: black;
+    }
+
+    .p-button.p-button-danger {
+        background: transparent;
+        border: 1px solid green;
+        font-size: 0.7rem;
+        color: green;
+        padding: 10px;
+        height: 30px;
+        width: 80px;
+    }
+
+    .p-dropdown {
+        /* height: 30px; */
+        width: 80px;
+        border: 1px solid green;
+        color: green;
+
+
+    }
+    .p-icon {
+        width: 1rem;
+        color: green;
+        height: 1rem;
+    }
+
+    .p-dropdown .p-dropdown-label {
+        background: transparent;
+        border: 0 none;
+        display: flex;
+        align-items: center;
+        color: green;
+    }
+    
+}
+
+p {
+    color: gray;
+    margin-top: 0;
+}
+
+p span {
+    color: black;
+    display: inline-block;
+    padding: 15px;
+    padding-bottom: 2px;
+    font-weight: 500;
+}

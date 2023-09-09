@@ -8,7 +8,7 @@ import { ButtonModule } from 'primeng/button';
 import { InputTextModule } from 'primeng/inputtext';
 import { DropdownModule } from 'primeng/dropdown';
 import { FormsModule } from '@angular/forms';
-
+import { DialogModule } from 'primeng/dialog';
 const routes: Routes = [
   {
     path: '',
@@ -27,6 +27,7 @@ const routes: Routes = [
     WishlistComponent
   ],
   imports: [
+    DialogModule,
     TableModule,
     CommonModule,
     ButtonModule,
