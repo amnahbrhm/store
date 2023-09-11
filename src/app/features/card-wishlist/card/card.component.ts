@@ -76,6 +76,7 @@ export class CardComponent implements OnInit {
     this.cardList = []
     this.items = []
     this.updateCard()
+    this.total = 0
     this.reference = this.makeid(24)
   }
 
