@@ -4,8 +4,11 @@ import { environment } from 'src/environments/environment';
 
 @Injectable({providedIn: 'root'})
 export class HttpService {
-    constructor(private http: HttpClient) { }
+    constructor(private http: HttpClient) {
+        console.log(environment.url);
+    }
     // url: string = 'http://localhost:3000/api/'
+    
     post(endpoint: string, data: any){
         return this.http.post(environment.url + endpoint, data)
     }

@@ -2,7 +2,7 @@
 <ng-container *ngFor="let item of products">
     <div class="col-4" style="display: inline-block">
         <div class="parentContainer">
-            <img [src]="'http://localhost:3000/api/items/image/'+item?.img " [alt]="item.name"  [routerLink]="'./'+item._id"/>
+            <img [src]="'http://http://51.20.40.84/api/items/image/'+item?.img " [alt]="item.name"  [routerLink]="'./'+item._id"/>
             <div class="bottom-right">
                 <p-button [icon]="!favList[item._id] ? 'pi pi-heart' : 'pi pi-heart-fill'" (onClick)="item.fav = !item.fav; addToWishlist(item)" styleClass="p-button-rounded p-button-wi p-button-outlined"></p-button>
             </div>
